@@ -619,6 +619,8 @@ type NodeGroup struct {
 	MinSize *int `json:"minSize,omitempty"`
 	// +optional
 	MaxSize *int `json:"maxSize,omitempty"`
+	// +optional
+	MetricsCollection []MetricsCollection `json:"metricsCollection,omitempty"`
 
 	// +optional
 	EBSOptimized *bool `json:"ebsOptimized,omitempty"`
