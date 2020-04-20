@@ -274,8 +274,8 @@ func nodeGroupResource(launchTemplateName *gfn.Value, vpcZoneIdentifier interfac
 	if ng.MaxSize != nil {
 		ngProps["MaxSize"] = fmt.Sprintf("%d", *ng.MaxSize)
 	}
-	if len(ng.MetricsCollection) > 0 {
-		ngProps["MetricsCollection"] = ng.MetricsCollection
+	if len(ng.ASGMetricsCollection) > 0 {
+		ngProps["MetricsCollection"] = ng.ASGMetricsCollection
 	}
 	if len(ng.ClassicLoadBalancerNames) > 0 {
 		ngProps["LoadBalancerNames"] = ng.ClassicLoadBalancerNames
