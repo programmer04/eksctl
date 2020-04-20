@@ -6,7 +6,6 @@ go 1.13
 
 require (
 	github.com/Azure/go-autorest/autorest v0.10.0 // indirect
-	github.com/NYTimes/gziphandler v1.0.1 // indirect
 	github.com/alecthomas/jsonschema v0.0.0-20190530235721-fd8d96416671
 	github.com/aws/aws-sdk-go v1.27.1
 	github.com/awslabs/goformation v0.0.0-20190320125420-ac0a17860cf1
@@ -14,22 +13,16 @@ require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/bxcodec/faker v2.0.1+incompatible
 	github.com/cloudflare/cfssl v0.0.0-20190726000631-633726f6bcb7
-	github.com/coreos/go-oidc v2.0.0+incompatible // indirect
 	github.com/dave/jennifer v1.3.0
 	github.com/dlespiau/kube-test-harness v0.0.0-20190930170435-ec3f93e1a754
-	github.com/docker/distribution v2.6.2+incompatible // indirect
-	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/evanphx/json-patch v4.5.0+incompatible
 	github.com/fluxcd/flux/pkg/install v0.0.0-20200402142123-873fb9300996 // flux 1.19.0
 	github.com/fluxcd/helm-operator/pkg/install v0.0.0-20200407140510-8d71b0072a3e // helm-operator 1.0.0
-	github.com/fullsailor/pkcs7 v0.0.0-20180613152042-8306686428a5 // indirect
 	github.com/gobuffalo/envy v1.9.0 // indirect
 	github.com/gobwas/glob v0.2.3
 	github.com/gohugoio/hugo v0.68.0
 	github.com/golangci/golangci-lint v1.21.0
 	github.com/goreleaser/goreleaser v0.110.0
-	github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7 // indirect
-	github.com/hashicorp/go-multierror v1.0.0 // indirect
 	github.com/instrumenta/kubeval v0.0.0-20190918223246-8d013ec9fc56
 	github.com/justinbarrick/go-k8s-portforward v1.0.3
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
@@ -38,16 +31,10 @@ require (
 	github.com/kris-nova/lolgopher v0.0.0-20180921204813-313b3abb0d9b // indirect
 	github.com/kubicorn/kubicorn v0.0.0-20180829191017-06f6bce92acc
 	github.com/lithammer/dedent v1.1.0
-	github.com/miekg/dns v1.1.1 // indirect
-	github.com/mitchellh/go-wordwrap v1.0.0 // indirect
 	github.com/onsi/ginkgo v1.11.0
 	github.com/onsi/gomega v1.8.1
-	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
-	github.com/opencontainers/image-spec v1.0.1 // indirect
-	github.com/opencontainers/runc v0.1.1 // indirect
 	github.com/pelletier/go-toml v1.6.0
 	github.com/pkg/errors v0.9.1
-	github.com/pquerna/cachecontrol v0.0.0-20180517163645-1555304b9b35 // indirect
 	github.com/riywo/loginshell v0.0.0-20190610082906-2ed199a032f6
 	github.com/spf13/afero v1.2.2
 	github.com/spf13/cobra v1.0.0
@@ -62,8 +49,6 @@ require (
 	github.com/weaveworks/launcher v0.0.0-20180711153254-f1b2830d4f2d
 	github.com/whilp/git-urls v0.0.0-20160530060445-31bac0d230fa
 	golang.org/x/tools v0.0.0-20200301222351-066e0c02454c
-	gopkg.in/square/go-jose.v2 v2.2.2 // indirect
-	gopkg.in/warnings.v0 v0.1.2 // indirect
 	k8s.io/api v0.15.10
 	k8s.io/apiextensions-apiserver v0.15.10
 	k8s.io/apimachinery v0.15.10
