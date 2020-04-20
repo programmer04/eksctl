@@ -787,6 +787,15 @@ type (
 	}
 )
 
+// MetricsCollection used by the scaling config
+// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html
+type MetricsCollection struct {
+	// +required
+	Granularity string `json:"granularity"`
+	// +optional
+	Metrics []string `json:"metrics"`
+}
+
 // ScalingConfig defines the scaling config
 type ScalingConfig struct {
 	// +optional
@@ -795,6 +804,8 @@ type ScalingConfig struct {
 	MinSize *int `json:"minSize,omitempty"`
 	// +optional
 	MaxSize *int `json:"maxSize,omitempty"`
+	// +optional
+	MetricsCollection []MetricsCollection `json:"metricsCollection,omitempty"`
 }
 
 // ManagedNodeGroup defines an EKS-managed nodegroup

@@ -354,6 +354,19 @@ ManagedNodeGroup:
   - name
   - ScalingConfig
   type: object
+MetricsCollection:
+  additionalProperties: false
+  properties:
+    granularity:
+      type: string
+    metrics:
+      items:
+        type: string
+      type: array
+  required:
+  - granularity
+  - metrics
+  type: object
 Network:
   additionalProperties: false
   properties:
@@ -664,6 +677,11 @@ ScalingConfig:
       type: integer
     maxSize:
       type: integer
+    metricsCollection:
+      items:
+        $ref: '#/definitions/MetricsCollection'
+        $schema: http://json-schema.org/draft-04/schema#
+      type: array
     minSize:
       type: integer
   type: object
