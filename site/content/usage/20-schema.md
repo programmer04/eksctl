@@ -365,7 +365,6 @@ MetricsCollection:
       type: array
   required:
   - granularity
-  - metrics
   type: object
 Network:
   additionalProperties: false

@@ -793,7 +793,7 @@ type MetricsCollection struct {
 	// +required
 	Granularity string `json:"granularity"`
 	// +optional
-	Metrics []string `json:"metrics"`
+	Metrics []string `json:"metrics,omitempty"`
 }
 
 // ScalingConfig defines the scaling config
