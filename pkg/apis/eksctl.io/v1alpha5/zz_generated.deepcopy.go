@@ -671,6 +671,13 @@ func (in *NodeGroup) DeepCopyInto(out *NodeGroup) {
 		*out = new(int)
 		**out = **in
 	}
+	if in.MetricsCollection != nil {
+		in, out := &in.MetricsCollection, &out.MetricsCollection
+		*out = make([]MetricsCollection, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
+	}
 	if in.EBSOptimized != nil {
 		in, out := &in.EBSOptimized, &out.EBSOptimized
 		*out = new(bool)

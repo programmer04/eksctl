@@ -422,6 +422,11 @@ NodeGroup:
       type: integer
     maxSize:
       type: integer
+    metricsCollection:
+      items:
+        $ref: '#/definitions/MetricsCollection'
+        $schema: http://json-schema.org/draft-04/schema#
+      type: array
     minSize:
       type: integer
     name:
@@ -679,7 +684,6 @@ ScalingConfig:
     metricsCollection:
       items:
         $ref: '#/definitions/MetricsCollection'
-        $schema: http://json-schema.org/draft-04/schema#
       type: array
     minSize:
       type: integer
