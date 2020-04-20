@@ -620,7 +620,7 @@ type NodeGroup struct {
 	// +optional
 	MaxSize *int `json:"maxSize,omitempty"`
 	// +optional
-	MetricsCollection []MetricsCollection `json:"metricsCollection,omitempty"`
+	ASGMetricsCollection []MetricsCollection `json:"metricsCollection,omitempty"`
 
 	// +optional
 	EBSOptimized *bool `json:"ebsOptimized,omitempty"`
@@ -806,8 +806,6 @@ type ScalingConfig struct {
 	MinSize *int `json:"minSize,omitempty"`
 	// +optional
 	MaxSize *int `json:"maxSize,omitempty"`
-	// +optional
-	MetricsCollection []MetricsCollection `json:"metricsCollection,omitempty"`
 }
 
 // ManagedNodeGroup defines an EKS-managed nodegroup

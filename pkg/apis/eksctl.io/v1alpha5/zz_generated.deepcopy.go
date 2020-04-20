@@ -671,8 +671,8 @@ func (in *NodeGroup) DeepCopyInto(out *NodeGroup) {
 		*out = new(int)
 		**out = **in
 	}
-	if in.MetricsCollection != nil {
-		in, out := &in.MetricsCollection, &out.MetricsCollection
+	if in.ASGMetricsCollection != nil {
+		in, out := &in.ASGMetricsCollection, &out.ASGMetricsCollection
 		*out = make([]MetricsCollection, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
@@ -1048,13 +1048,6 @@ func (in *ScalingConfig) DeepCopyInto(out *ScalingConfig) {
 		in, out := &in.MaxSize, &out.MaxSize
 		*out = new(int)
 		**out = **in
-	}
-	if in.MetricsCollection != nil {
-		in, out := &in.MetricsCollection, &out.MetricsCollection
-		*out = make([]MetricsCollection, len(*in))
-		for i := range *in {
-			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
 	}
 	return
 }

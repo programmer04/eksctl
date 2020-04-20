@@ -681,10 +681,6 @@ ScalingConfig:
       type: integer
     maxSize:
       type: integer
-    metricsCollection:
-      items:
-        $ref: '#/definitions/MetricsCollection'
-      type: array
     minSize:
       type: integer
   type: object
