@@ -130,7 +130,7 @@ func Cleanup(ctx context.Context, ec2API ec2iface.EC2API, elbAPI elbiface.ELBAPI
 			if exists {
 				continue
 			}
-			logger.Debug("load balancer %s and its security groups were deleted by the cloud provider", name)
+			logger.Debug("load balancer %s and its security groups were deleted", name)
 			// The load balancer and its security groups have been deleted
 			delete(awsLoadBalancers, name)
 		}
@@ -141,7 +141,7 @@ func Cleanup(ctx context.Context, ec2API ec2iface.EC2API, elbAPI elbiface.ELBAPI
 		for name := range awsLoadBalancers {
 			lbs = append(lbs, name)
 		}
-		return fmt.Errorf("deadline surpassed waiting for AWS load balancers to be deleted: %s", strings.Join(lbs, ","))
+		return fmt.Errorf("deadline surpassed waiting for AWS load balancers to be deleted: %s", strings.Join(lbs, ", "))
 	}
 	logger.Debug("deleting load balancer Security Group orphans")
 	// Orphan security-group deletion is needed due to https://github.com/kubernetes/kubernetes/issues/79994`
@@ -174,7 +174,7 @@ func getServiceLoadBalancer(ctx context.Context, ec2API ec2iface.EC2API, elbAPI 
 }
 
 func getIngressLoadBalancer(ctx context.Context, ingress networkingv1beta1.Ingress) (lb *loadBalancer) {
-	ingressCls := "kubernetes.io/ingress.class"
+	const ingressCls = "kubernetes.io/ingress.class"
 	if ingress.Annotations[ingressCls] != "alb" {
 		logger.Debug("%s is not ALB Ingress, it is '%s': '%s', skip", ingress.Name, ingressCls, ingress.Annotations[ingressCls])
 		return nil
