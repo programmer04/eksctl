@@ -16,6 +16,7 @@ import (
 	api "github.com/weaveworks/eksctl/pkg/apis/eksctl.io/v1alpha5"
 	"github.com/weaveworks/eksctl/pkg/cfn/manager"
 	"github.com/weaveworks/eksctl/pkg/ctl/cmdutils"
+	"github.com/weaveworks/eksctl/pkg/ebs"
 	"github.com/weaveworks/eksctl/pkg/elb"
 	iamoidc "github.com/weaveworks/eksctl/pkg/iam/oidc"
 	"github.com/weaveworks/eksctl/pkg/kubernetes"
@@ -149,6 +150,10 @@ func doDeleteCluster(cmd *cmdutils.Cmd) error {
 
 			logger.Info("cleaning up AWS load balancers created by Kubernetes objects of Kind Service or Ingress")
 			if err := elb.Cleanup(ctx, ctl.Provider.EC2(), ctl.Provider.ELB(), ctl.Provider.ELBV2(), clientSet, cfg); err != nil {
+				return err
+			}
+			logger.Info("cleaning up AWS Elastic Block Storages attached to Kubernetes object of Kind PersistentVolume")
+			if err := ebs.Cleanup(ctx, ctl.Provider.EC2(), clientSet); err != nil {
 				return err
 			}
 		}
